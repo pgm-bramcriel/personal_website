@@ -1,0 +1,13 @@
+.cards-container__card,
+.projects-title {
+    opacity: 0;
+    transform: translateY(-2rem);
+    transition: 2s ease;
+    will-change: transform, opacity;
+}
+
+.cards-container__card.is-visible,
+.projects-title.is-visible {
+    opacity: 1;
+    transform: translateY(2rem);
+}

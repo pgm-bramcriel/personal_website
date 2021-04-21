@@ -1,0 +1,247 @@
+@keyframes flicker {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+body {
+    background-color: rgb(44, 44, 44);
+}
+
+.header__hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://picsum.photos/1820/980');
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: rgb(245, 245, 245);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header__hero__text {
+    text-align: center;
+    padding: 0 4rem;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.typer {
+    color: #6A9A8B;
+}
+
+.typer::after {
+    content: "";
+    position: absolute;
+    width: 0.2rem;
+    margin-left: 0.4rem;
+    height: 6%;
+    border-right: solid 4px #6A9A8B;
+    animation: flicker 0.5s infinite ease;
+}
+
+.cards-container {
+    margin-top: 6rem;
+    margin-bottom: 3rem;
+    padding: 0 4rem;
+}
+
+.cards-flexcontainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.cards-container__card {
+    width: 30%;
+    color: rgb(245, 245, 245);
+    font-size: 1.5rem;
+    margin-bottom: 3rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    /* font-family: sans-serif; */
+}
+
+.cards-container__card:hover .cards-container__card__img {
+    filter: brightness(80%);
+}
+
+.cards-container__card__img {
+    width: 100%;
+    height: 100%;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    filter: brightness(40%);
+    transition: 0.2s ease;
+}
+
+.cards-container__card__title {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 2rem;
+    position: absolute;
+    bottom: 2rem;
+}
+
+.border-bottom {
+    border-bottom: solid 3px #6A9A8B;
+}
+
+.projects-title {
+    margin-bottom: 3rem;
+    font-size: 3rem;
+    color: rgb(245, 245, 245);
+    font-weight: bold;
+    padding-left: 2rem;
+    border-left: solid 8px #6A9A8B;
+}
+
+nav {
+    width: 100%;
+    position: fixed;
+    color: rgb(245, 245, 245);
+    top: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 4rem;
+    border-bottom: solid 3px rgb(245, 245, 245);
+    z-index: 999;
+    transition: 1s ease;
+}
+
+.logo {
+    font-size: 2.5rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.logo-green {
+    color: #6A9A8B;
+}
+
+.nav-right {
+    display: flex;
+}
+
+.nav-right--hamburger {
+    display: none;
+}
+
+.nav-right li {
+    font-size: 1.5rem;
+    margin-right: 4rem;
+}
+
+.nav-right li:last-child {
+    margin-right: 0;
+}
+
+.nav-right a {
+    padding-bottom: 2.55rem;
+    transition: 0.2s ease;
+}
+
+.nav-right a:hover {
+    color: #6A9A8B;
+    border-bottom: solid 3px #6A9A8B;
+}
+
+.active {
+    color: #6A9A8B;
+    border-bottom: solid 3px #6A9A8B;
+}
+
+.bgcolor {
+    background-color: rgba(27, 27, 27, 0.904);
+    border-bottom: solid 3px #6a9a8b71;
+}
+
+footer {
+    margin-top: 6rem;
+    background-color: rgba(27, 27, 27, 0.904);
+    padding: 2rem 4rem;
+    color: white;
+}
+
+footer h2 {
+    margin-bottom: 2rem;
+    color: #6A9A8B;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+footer li {
+    margin-bottom: 0.75rem;
+}
+
+@media (max-width: 1250px) {
+    .cards-container__card {
+        width: 45%;
+    }
+}
+
+@media (max-width: 1150px) {
+    .nav-right {
+        display: none;
+    }
+
+    .nav-right--hamburger {
+        display: block;
+        height: 32px;
+        cursor: pointer;
+        fill: white;
+    }
+}
+
+@media (max-width: 850px) {
+    .cards-container__card {
+        width: 100%;
+    }
+}
+
+@media (max-width: 560px) {
+    nav {
+        padding: 2rem;
+    }
+
+    .typerTest {
+        padding: 0 2rem;
+    }
+
+    .cards-container {
+        padding: 0 2rem;
+    }
+
+    .projects-title {
+        font-size: 2rem;
+    }
+
+    .cards-container__card__title {
+        font-size: 1.5rem;
+    }
+
+    .logo {
+        font-size: 1.3rem;
+    }
+
+    .nav-right--hamburger {
+        height: 20px;
+    }
+
+    .nav-right--hamburger svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .typerTest {
+        font-size: 1.5rem;
+    }
+}
